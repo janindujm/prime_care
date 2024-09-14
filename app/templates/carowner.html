@@ -9,14 +9,14 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         .hero-section {
-            background-image: url('https://via.placeholder.com/1600x600');
+            background-image: url('/static/images/hero-section.jpg');
             background-size: cover;
             background-position: center;
             height: 600px;
             display: flex;
             justify-content: center;
             align-items: center;
-            color: white;
+            color: rgb(0, 0, 0);
             text-align: center;
         }
         .hero-section h1 {
@@ -55,7 +55,7 @@
             <div class="row">
                 <div class="col-md-4">
                     <div class="card">
-                        <img src="https://via.placeholder.com/400x250" class="card-img-top" alt="Monthly Service">
+                        <img src="{{ url_for('static', filename='images/temp_1.jpg') }}" class="card-img-top" alt="Monthly Service" style="height: 250px; object-fit: cover;">
                         <div class="card-body">
                             <h5 class="card-title">Monthly Car Service</h5>
                             <p class="card-text">Get your car serviced every month to keep it in top condition.</p>
@@ -65,7 +65,7 @@
                 </div>
                 <div class="col-md-4">
                     <div class="card">
-                        <img src="https://via.placeholder.com/400x250" class="card-img-top" alt="Annual Service">
+                        <img src="{{ url_for('static', filename='images/temp_2.jpg') }}" class="card-img-top" alt="Annual Service" style="height: 250px; object-fit: cover;">
                         <div class="card-body">
                             <h5 class="card-title">Annual Car Service</h5>
                             <p class="card-text">We offer comprehensive yearly service packages for your vehicle.</p>
@@ -75,7 +75,7 @@
                 </div>
                 <div class="col-md-4">
                     <div class="card">
-                        <img src="https://via.placeholder.com/400x250" class="card-img-top" alt="Pickup & Delivery">
+                        <img src="{{ url_for('static', filename='images/temp_3.jpg') }}" class="card-img-top" alt="Pickup & Delivery" style="height: 250px; object-fit: cover;">
                         <div class="card-body">
                             <h5 class="card-title">Pickup & Delivery</h5>
                             <p class="card-text">We pick up your vehicle from your location, service it, and deliver it back to you.</p>

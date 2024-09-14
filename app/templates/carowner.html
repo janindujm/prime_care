@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Car Service | Home</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .hero-section {
+            background-image: url('https://via.placeholder.com/1600x600');
+            background-size: cover;
+            background-position: center;
+            height: 600px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+        }
+        .hero-section h1 {
+            font-size: 4rem;
+            font-weight: bold;
+        }
+        .hero-section p {
+            font-size: 1.5rem;
+        }
+        .services-section {
+            padding: 60px 0;
+        }
+        .services-section .card {
+            margin: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    {% include 'nav_bar.html' %}
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <h1>Your Trusted Car Service</h1>
+            <p>Monthly or Annual, We Service Your Car at Your Convenience!</p>
+            <a href="#services" class="btn btn-primary btn-lg">Request a Service</a>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services-section" id="services">
+        <div class="container">
+            <h2 class="text-center mb-5">Our Services</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="https://via.placeholder.com/400x250" class="card-img-top" alt="Monthly Service">
+                        <div class="card-body">
+                            <h5 class="card-title">Monthly Car Service</h5>
+                            <p class="card-text">Get your car serviced every month to keep it in top condition.</p>
+                            <a href="#" class="btn btn-primary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="https://via.placeholder.com/400x250" class="card-img-top" alt="Annual Service">
+                        <div class="card-body">
+                            <h5 class="card-title">Annual Car Service</h5>
+                            <p class="card-text">We offer comprehensive yearly service packages for your vehicle.</p>
+                            <a href="#" class="btn btn-primary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="https://via.placeholder.com/400x250" class="card-img-top" alt="Pickup & Delivery">
+                        <div class="card-body">
+                            <h5 class="card-title">Pickup & Delivery</h5>
+                            <p class="card-text">We pick up your vehicle from your location, service it, and deliver it back to you.</p>
+                            <a href="#" class="btn btn-primary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-light text-center text-lg-start mt-5">
+        <div class="container p-4">
+            <div class="row">
+                <div class="col-lg-6 col-md-12 mb-4">
+                    <h5 class="text-uppercase">CarServiceCo</h5>
+                    <p>Your trusted partner in car maintenance. We offer monthly and annual services with pickup and delivery options.</p>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5 class="text-uppercase">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#!" class="text-dark">Home</a></li>
+                        <li><a href="#!" class="text-dark">Services</a></li>
+                        <li><a href="#!" class="text-dark">About</a></li>
+                        <li><a href="#!" class="text-dark">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5 class="text-uppercase">Contact Us</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#!" class="text-dark">Email: support@carserviceco.com</a></li>
+                        <li><a href="#!" class="text-dark">Phone: +123 456 7890</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="text-center p-3 bg-dark text-light">
+            © 2024 CarServiceCo. All Rights Reserved.
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

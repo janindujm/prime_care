@@ -27,3 +27,13 @@ class Service(db.Model):
     service_type = db.Column(db.String(100), nullable=False)
     due_date = db.Column(db.DateTime, nullable=False)
     owner_id = db.Column(db.Integer, db.ForeignKey('vehicle_owner.id'), nullable=False)
+
+
+
+class ServiceProvider(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    company_name = db.Column(db.String(100), nullable=False)
+    registration_number = db.Column(db.String(100), nullable=False)
+    location = db.Column(db.String(100), nullable=False)
+    location_link = db.Column(db.String(200), nullable=False)
+    services = db.Column(db.Text, nullable=False)  # Store services as a comma-separated string

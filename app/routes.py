@@ -70,4 +70,50 @@ def logout():
     logout_user()
     return redirect(url_for('home'))
 
+@app.route('/carowner')
+def carowner():
+    return render_template('carowner.html')
 
+
+@app.route('/service_provider')
+def service_provider():
+    return render_template('service_provider.html')
+
+@app.route('/service_provider_signup', methods=['GET', 'POST'])
+def service_provider_signup():
+    if request.method == 'POST':
+        company_name = request.form['company_name']
+        registration_number = request.form['registration_number']
+        location = request.form['location']
+        location_link = request.form['location_link']
+        services = request.form.getlist('services')
+        terms_and_conditions = request.form.get('terms_and_conditions')
+
+        if not terms_and_conditions:
+            flash("You must agree to the terms and conditions.", "danger")
+            return render_template('service_provider_signup.html', error="You must agree to the terms and conditions.")
+        
+        # Add the new service provider
+        new_provider = ServiceProvider(
+            company_name=company_name,
+            registration_number=registration_number,
+            location=location,
+            location_link=location_link,
+            services=','.join(services)  # Store services as a comma-separated string
+        )
+        db.session.add(new_provider)
+        db.session.commit()
+
+        flash("Registration successful! Please log in to access your dashboard.", "success")
+        return redirect(url_for('login'))
+
+    services_list = [
+        'Oil Change', 'Tire Rotation', 'Brake Inspection and Replacement',
+        'Fluid Checks and Top-Offs', 'Air Filter Replacement', 'Battery Check and Replacement',
+        'Spark Plug Replacement', 'Belt and Hose Inspection/Replacement', 'Transmission Fluid Change',
+        'Alignment and Suspension Check', 'Cooling System Service', 'Headlight/Taillight Replacement',
+        'Cabin Air Filter Replacement', 'Fuel System Cleaning', 'Exhaust System Inspection/Repair',
+        'Wiper Blade Replacement', 'Timing Belt/Chain Replacement'
+    ]
+
+    return render_template('service_provider_signup.html', services=services_list)

@@ -1,7 +1,7 @@
 # app/routes.py
 from flask import render_template, request, redirect, url_for, flash
 from app import app, db
-from app.models import VehicleOwner, Payment, Service
+from app.models import VehicleOwner, Payment, Service, ServiceProvider
 from flask_login import LoginManager, login_user, login_required, logout_user, current_user
 
 login_manager = LoginManager(app)
@@ -77,7 +77,7 @@ def carowner():
 
 @app.route('/service_provider')
 def service_provider():
-    return render_template('service_provider.html')
+    return render_template('service_provider/service_provider.html')
 
 @app.route('/service_provider_signup', methods=['GET', 'POST'])
 def service_provider_signup():
@@ -116,4 +116,4 @@ def service_provider_signup():
         'Wiper Blade Replacement', 'Timing Belt/Chain Replacement'
     ]
 
-    return render_template('service_provider_signup.html', services=services_list)
+    return render_template('service_provider/service_provider_signup.html', services=services_list)

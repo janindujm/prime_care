@@ -1,8 +1,30 @@
 <!-- Navigation Bar -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<style>
+.fixed-navbar {
+    height: 70px; /* Fix the navbar height */
+    overflow: hidden; /* Prevent content from increasing navbar height */
+}
+
+.navbar-logo {
+    height: 150px; /* Adjust the logo size */
+    width: auto;  /* Maintain aspect ratio */
+    position: relative;
+    top: -5px; /* Adjust this if necessary to align the logo vertically */
+}
+
+
+</style>
+
+
+<!-- Navigation Bar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-navbar">
     <div class="container">
         {% if not current_user.is_authenticated %}
-        <a class="navbar-brand text-white" href="{{ url_for('home') }}">PrimeCare</a> <!-- Changed 'home' to 'dashboard' -->
+        <a class="navbar-brand" href="{{ url_for('home') }}">
+            <!-- Logo -->
+            <img src="{{ url_for('static', filename='images/Autoprime.png') }}" alt="Autoprime Logo" class="navbar-logo">
+
+        </a>
         {% endif %}
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -19,25 +41,17 @@
                     <a class="nav-link text-white" href="#">Contact</a>
                 </li>
 
-
-
                 {% if current_user.is_authenticated %}
-                <!-- User is logged in, display Dashboard and Logout with user's name -->
-
                 <li class="nav-item">
                     <a class="nav-link text-white" href="{{ url_for('dashboard') }}">Dashboard</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link text-white" href="{{ url_for('logout') }}">Logout ({{ current_user.first_name }})</a>
                 </li>
-
-            
                 {% else %}
                 <li class="nav-item">
                     <a class="nav-link text-white" href="{{ url_for('login') }}">Login</a>
                 </li>
-
-                <!-- User is not logged in, no need to show Register and Login buttons -->
                 {% endif %}
             </ul>
         </div>

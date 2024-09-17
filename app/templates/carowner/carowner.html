@@ -42,9 +42,10 @@
             padding: 60px 0;
         }
         .services-section .card {
-            margin: 15px;
+            margin: 20px;
             background-color: #1f1f1f;
             color: #ffffff;
+            margin-left: 50px;
         }
         .services-section .card h5 {
             color: #ffffff;
@@ -74,9 +75,10 @@
     <!-- Hero Section -->
     <section class="hero-section">
         <div class="container">
-            <h1>Your Trusted Car Service</h1>
-            <p>Monthly or Annual, We Service Your Car at Your Convenience!</p>
-            <a href="#services" class="btn btn-primary btn-lg">Request a Service</a>
+            <h1>We’ll ensure your car gets the best care</h1>
+            <p>Experience hassle-free vehicle maintenance with our subscription services. We've got
+                everything covered for you!</p>
+            <a href="{{ url_for('signup') }}" class="btn btn-primary btn-lg">Sign Up</a>
         </div>
     </section>
 
@@ -89,19 +91,9 @@
                     <div class="card">
                         <img src="{{ url_for('static', filename='images/temp_1.jpg') }}" class="card-img-top" alt="Monthly Service" style="height: 250px; object-fit: cover;">
                         <div class="card-body">
-                            <h5 class="card-title">Monthly Car Service</h5>
-                            <p class="card-text">Get your car serviced every month to keep it in top condition.</p>
-                            <a href="#" class="btn btn-primary">Learn More</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card">
-                        <img src="{{ url_for('static', filename='images/temp_2.jpg') }}" class="card-img-top" alt="Annual Service" style="height: 250px; object-fit: cover;">
-                        <div class="card-body">
-                            <h5 class="card-title">Annual Car Service</h5>
-                            <p class="card-text">We offer comprehensive yearly service packages for your vehicle.</p>
-                            <a href="#" class="btn btn-primary">Learn More</a>
+                            <h5 class="card-title">Pick service and delivery</h5>
+                            <p class="card-text">We collect your vehicle, service it, and return it to your doorstep.</p>
+                            <a href="#" class="btn btn-primary">Request This</a>
                         </div>
                     </div>
                 </div>
@@ -109,9 +101,10 @@
                     <div class="card">
                         <img src="{{ url_for('static', filename='images/temp_3.jpg') }}" class="card-img-top" alt="Pickup & Delivery" style="height: 250px; object-fit: cover;">
                         <div class="card-body">
-                            <h5 class="card-title">Pickup & Delivery</h5>
-                            <p class="card-text">We pick up your vehicle from your location, service it, and deliver it back to you.</p>
-                            <a href="#" class="btn btn-primary">Learn More</a>
+                            <h5 class="card-title">Mobile vehicle maintenance</h5>
+                            <p class="card-text">Our expert technicians come to you, providing on-site maintenance for your vehicle
+                                wherever you are.</p>
+                            <a href="#" class="btn btn-primary">Request This</a>
                         </div>
                     </div>
                 </div>
@@ -120,35 +113,8 @@
     </section>
 
     <!-- Footer -->
-    <footer class="text-center text-lg-start mt-5">
-        <div class="container p-4">
-            <div class="row">
-                <div class="col-lg-6 col-md-12 mb-4">
-                    <h5 class="text-uppercase">CarServiceCo</h5>
-                    <p>Your trusted partner in car maintenance. We offer monthly and annual services with pickup and delivery options.</p>
-                </div>
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <h5 class="text-uppercase">Quick Links</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="#!" class="text-white">Home</a></li>
-                        <li><a href="#!" class="text-white">Services</a></li>
-                        <li><a href="#!" class="text-white">About</a></li>
-                        <li><a href="#!" class="text-white">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <h5 class="text-uppercase">Contact Us</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="#!" class="text-white">Email: support@carserviceco.com</a></li>
-                        <li><a href="#!" class="text-white">Phone: +123 456 7890</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="text-center p-3 bg-dark text-light">
-            © 2024 CarServiceCo. All Rights Reserved.
-        </div>
-    </footer>
+    {% include 'footer.html' %}
+
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>

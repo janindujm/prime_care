@@ -42,7 +42,7 @@ def signup():
         flash("Registration successful! Please log in to access your dashboard.", "success")
         return redirect(url_for('login'))
 
-    return render_template('signup.html')
+    return render_template('carowner/signup.html')
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -72,7 +72,7 @@ def logout():
 
 @app.route('/carowner')
 def carowner():
-    return render_template('carowner.html')
+    return render_template('carowner/carowner.html')
 
 
 @app.route('/service_provider')
@@ -117,3 +117,7 @@ def service_provider_signup():
     ]
 
     return render_template('service_provider/service_provider_signup.html', services=services_list)
+
+@app.route('/driver')
+def driver():
+    return render_template("driver/driver.html/")

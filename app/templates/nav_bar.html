@@ -1,65 +1,74 @@
 <!-- Navigation Bar -->
 <style>
-.fixed-navbar {
-    height: 80px; /* Keeps the height consistent */
-    overflow: hidden;
-    padding: 0; /* Remove extra padding */
-}
-
-.navbar-logo {
-    height: 100px; /* Adjust the logo size for mobile */
-    width: auto;  /* Maintain aspect ratio */
-}
-
-@media (max-width: 768px) {
-    .navbar-logo {
-        height: 40px; /* Adjust logo for even smaller screens */
+    .fixed-navbar {
+        height: 80px; /* Keeps the height consistent */
+        overflow: hidden;
+        padding: 0; /* Remove extra padding */
     }
-}
-
-
-</style>
-
-
-<!-- Navigation Bar -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-navbar">
-    <div class="container">
-        <!-- Logo -->
-        <a class="navbar-brand" href="{{ url_for('home') }}">
-            <img src="{{ url_for('static', filename='images/Autoprime.png') }}" alt="Autoprime Logo" class="navbar-logo">
-        </a>
-
-        <!-- Toggler Button -->
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <!-- Collapsible Menu -->
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item">
-                    <a class="nav-link text-white" href="{{ url_for('carowner') }}">Services</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-white" href="#">About Us</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-white" href="#">Contact</a>
-                </li>
-                {% if current_user.is_authenticated %}
-                <li class="nav-item">
-                    <a class="nav-link text-white" href="{{ url_for('dashboard') }}">Dashboard</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-white" href="{{ url_for('logout') }}">Logout ({{ current_user.first_name }})</a>
-                </li>
-                {% else %}
-                <li class="nav-item">
-                    <a class="nav-link text-white" href="{{ url_for('login') }}">Login</a>
-                </li>
-                {% endif %}
-            </ul>
+    
+    .navbar-logo {
+        height: 60px; /* Adjust the logo size */
+        width: auto;  /* Maintain aspect ratio */
+    }
+    
+    @media (max-width: 768px) {
+        .fixed-navbar {
+            height: auto; /* Allow the navbar to adjust its height */
+        }
+        .navbar-logo {
+            height: 40px; /* Adjust logo for smaller screens */
+        }
+        .navbar-collapse {
+            text-align: center; /* Center menu items */
+        }
+        .navbar-nav {
+            width: 100%; /* Make the navbar items take full width */
+        }
+        .nav-item {
+            width: 100%; /* Stack nav items vertically */
+        }
+    }
+    </style>
+    
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-navbar">
+        <div class="container">
+            <!-- Logo -->
+            <a class="navbar-brand" href="{{ url_for('home') }}">
+                <img src="{{ url_for('static', filename='images/Autoprime.png') }}" alt="Autoprime Logo" class="navbar-logo">
+            </a>
+    
+            <!-- Toggler Button -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+    
+            <!-- Collapsible Menu -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="{{ url_for('carowner') }}">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#">Contact</a>
+                    </li>
+                    {% if current_user.is_authenticated %}
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="{{ url_for('dashboard') }}">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="{{ url_for('logout') }}">Logout ({{ current_user.first_name }})</a>
+                    </li>
+                    {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="{{ url_for('login') }}">Login</a>
+                    </li>
+                    {% endif %}
+                </ul>
+            </div>
         </div>
-    </div>
-</nav>
-
+    </nav>
+    

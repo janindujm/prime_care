@@ -16,7 +16,7 @@
             background-image: url('/static/images/hero-section.jpg');
             background-size: cover;
             background-position: center;
-            height: 600px;
+            height: 650px;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -24,14 +24,18 @@
             text-align: center;
         }
         .hero-section h1 {
-            font-size: 4rem;
+            font-size: 3rem; /* Reduced font size for smaller screens */
             font-weight: bold;
+            margin-top: 50px;
         }
         .hero-section p {
-            font-size: 1.5rem;
+            font-size: 1.25rem;
         }
         .button-section {
-            margin-top: 30px;
+            margin-top: 20px;
+        }
+        .button-section a {
+            margin: 5px; /* Add margin between buttons */
         }
         footer {
             background-color: #1f1f1f;
@@ -41,6 +45,35 @@
         }
         a:hover {
             color: #c0c0c0;
+        }
+
+        @media (max-width: 768px) {
+            .hero-section {
+                height: 400px; /* Adjust height for smaller screens */
+                padding: 20px;
+            }
+            .hero-section h1 {
+                font-size: 2.5rem; /* Further reduce font size on smaller screens */
+            }
+            .hero-section p {
+                font-size: 1rem;
+            }
+            .button-section a {
+                width: 100%; /* Make buttons take full width */
+                margin-bottom: 10px; /* Add spacing between buttons */
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero-section {
+                height: 300px; /* Further adjust height for extra small screens */
+            }
+            .hero-section h1 {
+                font-size: 2rem; /* Adjust font size */
+            }
+            .hero-section p {
+                font-size: 0.9rem; /* Adjust paragraph font size */
+            }
         }
     </style>
 </head>
@@ -52,18 +85,16 @@
     <!-- Hero Section -->
     <section class="hero-section">
         <div class="container">
-            <h1>Your Trusted Ultimate Passenger Vehicle Maintenance partner 
-            </h1>
+            <h1>Your Trusted Ultimate Passenger Vehicle Maintenance Partner</h1>
             <div class="button-section">
                 <a href="{{ url_for('carowner') }}" class="btn btn-primary btn-lg">I am Car Owner</a>
-                <a href="{{ url_for('driver') }}" class="btn btn-primary btn-lg">I am a driver</a>
-                <a href="{{ url_for('service_provider') }}" class="btn btn-secondary btn-lg">I am service Provider</a>
+                <a href="{{ url_for('driver') }}" class="btn btn-primary btn-lg">I am a Driver</a>
+                <a href="{{ url_for('service_provider') }}" class="btn btn-secondary btn-lg">I am a Service Provider</a>
             </div>
         </div>
     </section>
 
     {% include 'footer.html' %}
-
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
